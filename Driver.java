@@ -60,5 +60,11 @@ public class Driver{
 
     System.out.println("Should be [4, 2] \n");
 
+    L1.set(1,1);
+
+    System.out.println(L1);
+
+    System.out.println("Should be [4, 1] \n");
+
   }
 }

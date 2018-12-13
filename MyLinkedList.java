@@ -40,7 +40,7 @@ public class MyLinkedList{
    return current.getData();
 }
 
-private Integer set(int index, Integer value) {
+public Integer set(int index, Integer value) {
   Node current = start;
   for( int i = 0; i < index; i++) {
     current = current.next();
