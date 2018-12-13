@@ -14,17 +14,17 @@ public class MyLinkedList{
  }
 
  public String toString() {
-  String output = "";
+  String output = "[";
   Node n = start;
-  while(n.next() != null) {
-    output += n.data();
+  while(n.next() != null && n != end) {
+    output += n.data() +", ";
     n = n.next();
   }
-  return output;
+  return output + n.data() + "]";
  }
 
- public MyLinkedList( int val, Node begin, Node fin) {
-   size = val;
+ public MyLinkedList(Node begin, Node fin) {
+   size = 2;
    start = begin;
    end = fin;
  }
