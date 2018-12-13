@@ -9,17 +9,20 @@ public class MyLinkedList{
    if( size == 0) {
      Node n = new Node(value,null,null);
      start = n;
-     end =n;
+     end = n;
    }
    if( size >= 1) {
      Node n = new Node(value, null, end);
      n.prev().setNext(n);
-     end =n;
+     end = n;
    }
+   size++;
    return true;
  }
 
  public String toString() {
+  if( size == 0)
+  return "[]";
   String output = "[";
   Node n = start;
   while(n != end) {
@@ -29,7 +32,7 @@ public class MyLinkedList{
   return output + n.getData() + "]";
  }
 
- private Integer get(int index) {
+ public Integer get(int index) {
    Node current = start;
    for( int i = 0; i < index; i++) {
      current = current.next();
@@ -47,9 +50,19 @@ private Integer set(int index, Integer value) {
   return temp;
 }
 
- public MyLinkedList(){
+public boolean contains( Integer value){
+  Node current = start;
+  while( current != end) {
+    if ( current.getData() == value)
+    return true;
+  }
+  return false;
+}
+
+
+public MyLinkedList(){
    start = null;
    end = null;
    size = 0;
-}
+ }
 }

@@ -17,7 +17,7 @@ public class Driver{
     System.out.println( n2.next());
     System.out.println( n3.next());
 
-    System.out.println("Should be the adresses for the Node1, Node2, null \n");
+    System.out.println("Should be the adresses for the 123, 3, null \n");
 
     n2.setPrev(n1);
     n3.setPrev(n2);
@@ -26,7 +26,7 @@ public class Driver{
     System.out.println( n2.prev());
     System.out.println( n3.prev());
 
-    System.out.println("Should be null, Node1, Node2 \n");
+    System.out.println("Should be null, 50, 123 \n");
 
     System.out.println( n1.getData());
     System.out.println( n2.getData());
@@ -38,14 +38,27 @@ public class Driver{
 
     System.out.println(L1);
 
-    System.out.println("Should be [50, 123] \n");
+    System.out.println("Should be [] \n");
 
     L1.add(4);
 
+    System.out.println(L1.get(0));
+
+    System.out.println("Should be 4 \n");
+
     System.out.println(L1);
 
-    System.out.println("Should be [50, 123, 4] \n");
+    System.out.println("Should be [4] \n");
 
+    L1.add(2);
+
+    System.out.println(L1.get(1));
+
+    System.out.println("Should be 2 \n");
+
+    System.out.println(L1);
+
+    System.out.println("Should be [4, 2] \n");
 
   }
 }
