@@ -37,6 +37,16 @@ public class MyLinkedList{
    return current.getData();
 }
 
+private Integer set(int index, Integer value) {
+  Node current = start;
+  for( int i = 0; i < index; i++) {
+    current = current.next();
+  }
+  Integer temp = current.getData();
+  current.setData(value);
+  return temp;
+}
+
  public MyLinkedList(){
    start = null;
    end = null;
