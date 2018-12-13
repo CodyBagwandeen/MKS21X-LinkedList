@@ -22,4 +22,10 @@ public class MyLinkedList{
   }
   return output;
  }
+
+ public MyLinkedList( int val, Node begin, Node fin) {
+   size = val;
+   start = begin;
+   end = fin;
+ }
 }
