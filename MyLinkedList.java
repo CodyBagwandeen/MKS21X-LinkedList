@@ -30,7 +30,11 @@ public class MyLinkedList{
  }
 
  private Integer get(int index) {
-   
+   Node current = start;
+   for( int i = 0; i < index; i++) {
+     current = current.next();
+   }
+   return current.getData();
 }
 
  public MyLinkedList(){
