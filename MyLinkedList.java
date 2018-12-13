@@ -27,5 +27,9 @@ public class MyLinkedList{
    size = 2;
    start = begin;
    end = fin;
+   start.setNext(end);
+   end.setPrev(start);
+   start.setPrev(null);
+   end.setNext(null);
  }
 }
