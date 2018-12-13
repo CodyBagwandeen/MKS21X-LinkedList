@@ -6,13 +6,20 @@ public class MyLinkedList{
    return size;
  }
  public boolean add(int value) {
-   Node n = new Node( value, null, end.prev());
+   Node n = new Node( value, null, end);
+   end.setNext(n);
    size++;
+   end = n;
+   return true;
  }
 
  public String toString() {
   String output = "";
-  while(next != null)
-
+  Node n = start;
+  while(n.next() != null) {
+    output += n.data();
+    n = n.next();
+  }
+  return output;
  }
 }
