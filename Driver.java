@@ -60,11 +60,21 @@ public class Driver{
 
     System.out.println("Should be [4, 2] \n");
 
-    L1.set(1,1);
+    System.out.println(L1.set(1,1));
+
+    System.out.println("Should be 2 \n");
 
     System.out.println(L1);
 
     System.out.println("Should be [4, 1] \n");
+
+    System.out.println(L1.contains(1));
+
+    System.out.println("Should be true \n");
+
+    System.out.println(L1.contains(23));
+
+    System.out.println("Should be false \n");
 
   }
 }

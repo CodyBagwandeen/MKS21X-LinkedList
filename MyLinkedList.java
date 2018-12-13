@@ -41,6 +41,8 @@ public class MyLinkedList{
 }
 
 public Integer set(int index, Integer value) {
+  if( index < 0 || index > size)
+  throw new IndexOutOfBoundsException("Index must be within list");
   Node current = start;
   for( int i = 0; i < index; i++) {
     current = current.next();
@@ -52,9 +54,10 @@ public Integer set(int index, Integer value) {
 
 public boolean contains( Integer value){
   Node current = start;
-  while( current != end) {
+  while( current != null) {
     if ( current.getData() == value)
     return true;
+    current = current.next();
   }
   return false;
 }
