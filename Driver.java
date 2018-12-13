@@ -1,8 +1,8 @@
 public class Driver{
   public static void main( String[] args) {
-    Node n1 = new Node( 50, null, null);
-    Node n2 = new Node( 123, null, n1);
-    Node n3 = new Node( 3, null, n2);
+    Node n1 = new Node(50, null,null);
+    Node n2 = new Node(123,null,null);
+    Node n3 = new Node(3,null,null);
 
     System.out.println( n1.next());
     System.out.println( n2.next());
@@ -28,13 +28,13 @@ public class Driver{
 
     System.out.println("Should be null, Node1, Node2 \n");
 
-    System.out.println( n1.data());
-    System.out.println( n2.data());
-    System.out.println( n3.data());
+    System.out.println( n1.getData());
+    System.out.println( n2.getData());
+    System.out.println( n3.getData());
 
     System.out.println("Should be 50, 123, 3 \n");
 
-    MyLinkedList L1 = new MyLinkedList( n1, n2);
+    MyLinkedList L1 = new MyLinkedList();
 
     System.out.println(L1);
 

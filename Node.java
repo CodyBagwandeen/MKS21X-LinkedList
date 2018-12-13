@@ -1,8 +1,14 @@
 public class Node{
- private int data;
+ private Integer data;
  private Node next,prev;
 
- public int data() {
+public Node( Integer val, Node Next, Node previous) {
+  data = val;
+  next = Next;
+  prev = previous;
+}
+
+ public int getData() {
    return data;
  }
 
@@ -22,9 +28,14 @@ public class Node{
    prev = val;
  }
 
- public Node( int value, Node Next, Node previous) {
-   data = value;
-   next = Next;
-   prev = previous;
+ public Integer setData(Integer i) {
+   Integer temp = data;
+   data = i;
+   return temp;
  }
+
+ public String toString() {
+   return "" + data;
+ }
+
 }

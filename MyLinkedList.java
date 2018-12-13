@@ -6,10 +6,16 @@ public class MyLinkedList{
    return size;
  }
  public boolean add(int value) {
-   Node n = new Node( value, null, end);
-   end.setNext(n);
-   size++;
-   end = n;
+   if( size == 0) {
+     Node n = new Node(value,null,null);
+     start = n;
+     end =n;
+   }
+   if( size >= 1) {
+     Node n = new Node(value, null, end);
+     n.prev().setNext(n);
+     end =n;
+   }
    return true;
  }
 
@@ -17,19 +23,19 @@ public class MyLinkedList{
   String output = "[";
   Node n = start;
   while(n != end) {
-    output += n.data() +", ";
+    output += n.getData() +", ";
     n = n.next();
   }
-  return output + n.data() + "]";
+  return output + n.getData() + "]";
  }
 
- public MyLinkedList(Node begin, Node fin) {
-   size = 2;
-   start = begin;
-   end = fin;
-   start.setNext(end);
-   end.setPrev(start);
-   start.setPrev(null);
-   end.setNext(null);
- }
+ private Integer get(int index) {
+   
+}
+
+ public MyLinkedList(){
+   start = null;
+   end = null;
+   size = 0;
+}
 }
