@@ -10,7 +10,7 @@ public class Node{
    return next;
  }
 
- public Node setNext( Node val) {
+ public void setNext( Node val) {
    next = val;
  }
 
@@ -18,7 +18,7 @@ public class Node{
    return prev;
  }
 
- public Node set( Node val) {
+ public void setPrev( Node val) {
    prev = val;
  }
 
