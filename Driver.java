@@ -92,5 +92,12 @@ public class Driver{
 
     System.out.println("Should be -1 \n");
 
+    L1.add(1,5);
+
+    System.out.println(L1);
+
+    System.out.println("Should be [4, 5, 1] \n" );
+
+
   }
 }

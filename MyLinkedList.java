@@ -80,4 +80,19 @@ public class MyLinkedList{
     }
     return -1;
   }
+
+  public void add(int index, Integer value){
+    if( index < 0 || index > size)
+    throw new IndexOutOfBoundsException("Index must be within list");
+    Node n = new Node(value,null,null);
+    Node current = start;
+    for( int i = 0; i < index; i++) {
+      current = current.next();
+    }
+    current.prev().setNext(n);
+    current.setPrev(n);
+    n.setPrev(current.prev());
+    n.setNext(current);
+    size++;
+  }
 }
