@@ -17,7 +17,7 @@ public class Driver{
     System.out.println( n2.next());
     System.out.println( n3.next());
 
-    System.out.println("Should be the adresses for the 123, 3, null \n");
+    System.out.println("Should be 123, 3, null \n");
 
     n2.setPrev(n1);
     n3.setPrev(n2);
@@ -33,6 +33,14 @@ public class Driver{
     System.out.println( n3.getData());
 
     System.out.println("Should be 50, 123, 3 \n");
+
+    System.out.println( n1.setData(23));
+
+    System.out.println("Should be 50 \n");
+
+    System.out.println( n1.getData());
+
+    System.out.println("Should be 23 \n");
 
     MyLinkedList L1 = new MyLinkedList();
 
@@ -75,6 +83,14 @@ public class Driver{
     System.out.println(L1.contains(23));
 
     System.out.println("Should be false \n");
+
+    System.out.println(L1.indexOf(1));
+
+    System.out.println("Should be 1 \n");
+
+    System.out.println(L1.indexOf(23));
+
+    System.out.println("Should be -1 \n");
 
   }
 }
