@@ -16,7 +16,7 @@ public class MyLinkedList{
  public String toString() {
   String output = "[";
   Node n = start;
-  while(n.next() != null && n != end) {
+  while(n != end) {
     output += n.data() +", ";
     n = n.next();
   }
