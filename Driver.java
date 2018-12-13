@@ -98,6 +98,20 @@ public class Driver{
 
     System.out.println("Should be [4, 5, 1] \n" );
 
+    System.out.println(L1.remove(1));
+
+    System.out.println("Should be 5 \n");
+
+    System.out.println(L1);
+
+    System.out.println("Should be [4, 1] \n" );
+
+    L1.add(1,123);
+
+    System.out.println(L1);
+
+    System.out.println("Should be [4, 123, 1] \n" );
+
 
   }
 }
