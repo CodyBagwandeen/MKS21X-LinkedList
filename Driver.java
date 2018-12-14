@@ -136,5 +136,36 @@ public class Driver{
 
     System.out.println("Should be [4] \n");
 
+    System.out.println(L1.remove((Integer)1));
+
+    System.out.println("Should be false \n" );
+
+    System.out.println(L1);
+
+    System.out.println("Should be [4] \n");
+
+    if( args.length != 0) {
+      MyLinkedList L2 = new MyLinkedList();
+      for( int i = 0; i < Integer.parseInt(args[0]); i++) {
+        L2.add( (int)(Math.random()* 10));
+      }
+      System.out.println(L2);
+
+      for( int i = Integer.parseInt(args[0]) - 1; i > 4; i--) {
+        L2.remove(i);
+      }
+      System.out.println(L2);
+
+      for( int i = 5; i < 10 ; i++) {
+        L2.add(i);
+      }
+      System.out.println(L2);
+
+      System.out.println(L2.indexOf(7));
+
+      System.out.println(L2.remove((Integer)5));
+
+      System.out.println(L2);
+    }
   }
 }

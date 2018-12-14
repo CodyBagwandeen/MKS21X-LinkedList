@@ -110,7 +110,6 @@ public class MyLinkedList{
       Node before = current.prev();
       before.setNext(null);
       end = before;
-      return current.getData();
     } else {
       Node before = current.prev();
       Node after = current.next();
