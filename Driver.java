@@ -112,6 +112,21 @@ public class Driver{
 
     System.out.println("Should be [4, 123, 1] \n" );
 
+    System.out.println(L1.remove((Integer)123));
+
+    System.out.println("Should be true \n");
+
+    System.out.println(L1);
+
+    System.out.println("Should be [4, 1] \n" );
+
+    System.out.println(L1.remove((Integer)230));
+
+    System.out.println("Should be false \n" );
+
+    System.out.println(L1);
+
+    System.out.println("Should be [4,1] \n");
 
   }
 }

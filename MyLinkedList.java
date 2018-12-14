@@ -110,4 +110,12 @@ public class MyLinkedList{
     after.setPrev(before);
     return current.getData();
   }
+
+  public boolean remove(Integer value){
+    if(contains(value)) {
+      remove(indexOf(value));
+      return true;
+    }
+    return false;
+  }
 }
