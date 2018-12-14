@@ -39,9 +39,11 @@ public class MyLinkedList{
   }
 
   public Integer get(int index) {
-   Node current = start;
-   for( int i = 0; i < index; i++) {
-     current = current.next();
+    if( index < 0 || index > size)
+    throw new IndexOutOfBoundsException("Index must be within list");
+    Node current = start;
+    for( int i = 0; i < index; i++) {
+      current = current.next();
     }
     return current.getData();
   }
@@ -98,16 +100,23 @@ public class MyLinkedList{
   }
 
   public Integer remove(int index){
-    if( index < 0 || index > size)
+    if( index < 0 || index >= size)
     throw new IndexOutOfBoundsException("Index must be within list");
     Node current = start;
     for( int i = 0; i < index; i++) {
       current = current.next();
     }
-    Node before = current.prev();
-    Node after = current.next();
-    before.setNext(after);
-    after.setPrev(before);
+    if( end == current) {
+      Node before = current.prev();
+      before.setNext(null);
+      end = before;
+      return current.getData();
+    } else {
+      Node before = current.prev();
+      Node after = current.next();
+      before.setNext(after);
+      after.setPrev(before);
+    }
     return current.getData();
   }
 
