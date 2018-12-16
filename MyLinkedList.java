@@ -116,6 +116,7 @@ public class MyLinkedList{
       before.setNext(after);
       after.setPrev(before);
     }
+    size--;
     return current.getData();
   }
 
