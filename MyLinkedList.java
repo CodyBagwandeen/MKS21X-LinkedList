@@ -39,7 +39,7 @@ public class MyLinkedList{
   }
 
   public Integer get(int index) {
-    if( index < 0 || index > size)
+    if( index < 0 || index >= size)
     throw new IndexOutOfBoundsException("Index must be within list");
     Node current = start;
     for( int i = 0; i < index; i++) {
@@ -87,16 +87,23 @@ public class MyLinkedList{
     if( index < 0 || index > size)
     throw new IndexOutOfBoundsException("Index must be within list");
     Node n = new Node(value,null,null);
-    Node current = start;
-    for( int i = 0; i < index; i++) {
-      current = current.next();
+    if( index == 0){
+      n.setNext(start);
+      start.setPrev(n);
+      start = n;
+      size++;
+    } else {
+      Node current = start;
+      for( int i = 0; i < index; i++) {
+        current = current.next();
+      }
+      Node before = current.prev();
+      before.setNext(n);
+      current.setPrev(n);
+      n.setPrev(before);
+      n.setNext(current);
+      size++;
     }
-    Node before = current.prev();
-    before.setNext(n);
-    current.setPrev(n);
-    n.setPrev(before);
-    n.setNext(current);
-    size++;
   }
 
   public Integer remove(int index){
@@ -110,13 +117,22 @@ public class MyLinkedList{
       Node before = current.prev();
       before.setNext(null);
       end = before;
+      size--;
+      return current.getData();
     } else {
-      Node before = current.prev();
-      Node after = current.next();
-      before.setNext(after);
-      after.setPrev(before);
+      if ( current == start) {
+        Node after = current.next();
+        after.setPrev(null);
+        start = after;
+        size--;
+      } else {
+        Node before = current.prev();
+        Node after = current.next();
+        before.setNext(after);
+        after.setPrev(before);
+        size--;
+      }
     }
-    size--;
     return current.getData();
   }
 
