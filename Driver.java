@@ -520,6 +520,56 @@ public class Driver {
         System.out.println(" expected: [2, 4, 5, 7]");
         System.out.println(" actual "+ test_case);
 
+        System.out.println("\n[.]+[ENTER] to test extend(MyLinkedList Other)");
+        cont = sc.next();
+
+        MyLinkedList L1 = new MyLinkedList();
+        for( int i = 0; i < 5; i++){
+          L1.add(i);
+        }
+
+        System.out.println(test_case);
+        System.out.println(L1);
+        System.out.println("test_case.extend(L1)");
+
+        //continue
+        System.out.println("\n[.]+[ENTER] to run diagnostics");
+        cont = sc.next();
+
+        test_case.extend(L1);
+
+        System.out.print("// ");
+
+        if( L1.toString().equals("[]")) {
+          System.out.println("PASS");
+        } else {
+          System.out.println("FAIL");
+        }
+        System.out.println(" expected: []");
+        System.out.println(" actual "+ L1.toString());
+
+        System.out.print("// ");
+
+        if( test_case.toString().equals("[2, 4, 5, 7, 0, 1, 2, 3, 4]")) {
+          System.out.println("PASS");
+        } else {
+          System.out.println("FAIL");
+        }
+        System.out.println(" expected: [2, 4, 5, 7, 0, 1, 2, 3 ,4]");
+        System.out.println(" actual : "+ test_case.toString());
+
+        System.out.print("// ");
+
+        if( test_case.toStringReverse().equals("[4, 3, 2, 1, 0, 7, 5, 4, 2]")) {
+          System.out.println("PASS");
+        } else {
+          System.out.println("FAIL");
+        }
+        System.out.println(" expected : [4, 3, 2, 1, 0, 7, 5, 4, 2] ");
+        System.out.println(" actual : " + test_case.toStringReverse());
+
+
+
         break;
       case 2:
         // ?

@@ -155,4 +155,16 @@ public class MyLinkedList{
     }
     return false;
   }
+    //in O(1) runtime, move the elements from other onto the end of this
+    //The size of other is reduced to 0
+    //The size of this is now the combined sizes of both original lists
+   public void extend(MyLinkedList other){
+      end.setNext(other.start);
+      other.start.setPrev(end);
+      size += other.size();
+      end = other.end;
+      other.start = null;
+      other.end = null;
+      other.size = 0;
+    }
 }
