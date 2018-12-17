@@ -120,6 +120,26 @@ public class Driver {
         System.out.println("  actual:   " + test_case);
 
         // continue
+        System.out.println("\n[.]+[ENTER] to test toStringReverse()");
+        cont = sc.next();
+
+        System.out.println( "test_case.toStringReverse()");
+
+        // continue
+        System.out.println("\n[.]+[ENTER] to run diagnostics");
+        cont = sc.next();
+
+        System.out.print("// ");
+
+        if(test_case.toStringReverse().equals("[-7, -4, 2, 1]")) {
+          System.out.println("PASS");
+        } else {
+          System.out.println("FAIL");
+        }
+        System.out.println("  expected: [-7, -4, 2, 1]");
+        System.out.println("  actual:   " + test_case.toStringReverse());
+
+        // continue
         System.out.println("\n[.]+[ENTER] to test add(int index, Integer value)");
         cont = sc.next();
 

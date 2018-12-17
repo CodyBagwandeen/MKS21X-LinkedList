@@ -27,13 +27,25 @@ public class MyLinkedList{
   }
 
   public String toString() {
-   if( size == 0)
+    if( size == 0)
     return "[]";
     String output = "[";
     Node n = start;
     while(n != end) {
       output += n.getData() +", ";
       n = n.next();
+    }
+    return output + n.getData() + "]";
+  }
+
+  public String toStringReverse() {
+    if (size == 0)
+    return "[]";
+    String output = "[";
+    Node n = end;
+    while( n != start ) {
+      output += n.getData() + ", ";
+      n = n.prev();
     }
     return output + n.getData() + "]";
   }
