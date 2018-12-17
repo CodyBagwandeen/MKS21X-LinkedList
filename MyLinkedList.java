@@ -49,7 +49,7 @@ public class MyLinkedList{
   }
 
   public Integer set(int index, Integer value) {
-    if( index < 0 || index > size)
+    if( index < 0 || index >= size)
     throw new IndexOutOfBoundsException("Index must be within list");
     Node current = start;
     for( int i = 0; i < index; i++) {
